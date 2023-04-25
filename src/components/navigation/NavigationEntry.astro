@@ -1,0 +1,11 @@
+---
+interface Props {
+    path:     string;
+    name:     string;
+}
+
+const { path, name, isActive = false } = Astro.props;
+
+const activeStyle = (Astro.url.pathname == path) ? "underline decoration-2 underline-offset-4 decoration-solid decoration-white" :  undefined
+---
+<div><a href={path} class={"text-white " + activeStyle}>{name}</a></div>

@@ -1,5 +1,12 @@
 ---
-const navEntries = [
+interface Props {
+	header: string;
+	footer: string;
+}
+
+const { header, footer } = Astro.props;
+
+const navEntries: NavigationEntryData[] = [
 	{
 		path: "/",
 		name: "Home",		
@@ -13,8 +20,6 @@ const navEntries = [
 import Navigation from "@components/navigation/Navigation.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-
-const { header, footer } = Astro.props;
 ---
 <html lang="en">
 	<head>
@@ -26,9 +31,9 @@ const { header, footer } = Astro.props;
 	</head>
 	<body class="bg-gray-200">
 		<Navigation entries={navEntries} />
-		<Header title={header} />
+		<Header content={header} />
         <slot/>
-		<Footer title={footer} />
+		<Footer content={footer} />
     </body>
 </html>
     

@@ -1,11 +1,10 @@
 ---
 interface Props {
-    path:     string;
-    name:     string;
+    entry: NavigationEntryData
 }
 
-const { path, name, isActive = false } = Astro.props;
+const { entry } = Astro.props;
 
-const activeStyle = (Astro.url.pathname == path) ? "underline decoration-2 underline-offset-4 decoration-solid decoration-white" :  undefined
+const currentStyle = (Astro.url.pathname == entry.path) ? "underline decoration-2 underline-offset-4 decoration-solid decoration-white" :  undefined
 ---
-<div><a href={path} class={"text-white " + activeStyle}>{name}</a></div>
+<div><a href={entry.path} class={"text-white " + currentStyle}>{entry.name}</a></div>

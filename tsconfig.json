@@ -1,5 +1,6 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "verbatimModuleSyntax": true,
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

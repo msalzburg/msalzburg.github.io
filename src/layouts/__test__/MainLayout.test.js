@@ -1,23 +1,25 @@
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
-import { expect, test } from "vitest"
+import { expect, test } from "vitest";
 
 import MainLayout from "@layouts/MainLayout.astro";
 
 const container = await AstroContainer.create();
 
-test('MainLayout without properties', async () => {
-    const result = await container.renderToString(MainLayout);
+test("MainLayout without properties", async () => {
+  const result = await container.renderToString(MainLayout);
 
-    // contains static navigation entries
-    expect(result).toContain("/")
-    expect(result).toContain("Home")
-    expect(result).toContain("/about")
-    expect(result).toContain("About")
-})
+  // contains static navigation entries
+  expect(result).toContain("/");
+  expect(result).toContain("Home");
+  expect(result).toContain("/about");
+  expect(result).toContain("About");
+});
 
-test('MainLayout with properties', async () => {        
-    const result = await container.renderToString(MainLayout, {props: {header: "HeaderContent", footer: "FooterContent"}});
-    
-    expect(result).toContain("HeaderContent")
-    expect(result).toContain("FooterContent")
-})
+test("MainLayout with properties", async () => {
+  const result = await container.renderToString(MainLayout, {
+    props: { header: "HeaderContent", footer: "FooterContent" },
+  });
+
+  expect(result).toContain("HeaderContent");
+  expect(result).toContain("FooterContent");
+});

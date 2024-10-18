@@ -1,49 +1,62 @@
 ---
 interface Props {
-	header: string;
-	footer: string;
+  header: string;
+  footer: string;
 }
 
 const { header, footer } = Astro.props;
 
 const navEntries: NavigationEntryData[] = [
-	{
-		path: "/",
-		name: "Home",		
-	},
-	{
-		path: "/about",
-		name: "About",
-	},
-]
+  {
+    path: "/",
+    name: "Home",
+  },
+  {
+    path: "/about",
+    name: "About",
+  },
+];
 
 import Navigation from "@components/navigation/Navigation.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 ---
+
 <html lang="en">
-	<head>
-		<!-- Google Tag Manager -->
-		<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-WT6MGGC');</script>
-		<!-- End Google Tag Manager -->
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{header}</title>
-	</head>
-	<body class="bg-gray-200">
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT6MGGC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-		<Navigation entries={navEntries} />
-		<Header content={header} />
-        <slot/>
-		<Footer content={footer} />
-    </body>
+  <head>
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WT6MGGC");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{header}</title>
+  </head>
+  <body class="bg-gray-200">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WT6MGGC"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <Navigation entries={navEntries} />
+    <Header content={header} />
+    <slot />
+    <Footer content={footer} />
+  </body>
 </html>
-    

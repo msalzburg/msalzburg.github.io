@@ -10,6 +10,6 @@ jobs:
     uses: ./.github/workflows/lint.yml
   test:
     uses: ./.github/workflows/test.yml
-  deploy:
+  release:
     needs: [lint, test]
     uses: ./.github/workflows/release.yml

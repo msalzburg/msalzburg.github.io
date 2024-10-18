@@ -4,16 +4,15 @@ on:
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [ master ]
+    branches: [master]
 
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
-  
 
 permissions:
   contents: read
   pages: write
-  id-token: write    
+  id-token: write
 
 jobs:
   build:
@@ -23,7 +22,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
+          node-version-file: ".nvmrc"
       - run: npm install
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
@@ -32,12 +31,12 @@ jobs:
 
   deploy:
     needs: build
-    
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

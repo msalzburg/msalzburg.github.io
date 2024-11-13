@@ -1,7 +1,7 @@
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { expect, test } from "vitest";
 
-import Index from "../index.astro";
+import Index from "@pages/index.astro";
 
 const container = await AstroContainer.create();
 

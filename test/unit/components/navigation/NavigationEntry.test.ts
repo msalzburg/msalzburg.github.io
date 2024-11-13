@@ -1,7 +1,7 @@
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { expect, test } from "vitest";
 
-import NavigationEntry from "../NavigationEntry.astro";
+import NavigationEntry from "@components/navigation/NavigationEntry.astro";
 
 const container = await AstroContainer.create();
 

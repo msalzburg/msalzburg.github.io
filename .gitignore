@@ -1,5 +1,11 @@
-node_modules/*
+# build output
+dist/
 
-dist/*
+# generated types
+.astro/
 
+# dependencies
+node_modules/
+
+# vitest coverage files
 coverage/

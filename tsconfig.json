@@ -6,8 +6,7 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"]
-    },
-    "verbatimModuleSyntax": true
+    }
   },
   "exclude": ["coverage/**/*"]
 }

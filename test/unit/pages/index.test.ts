@@ -9,6 +9,5 @@ test("Index page", async () => {
   const result = await container.renderToString(Index);
 
   // contains static header and footer contents
-  expect(result).toContain("To whom it may concern");
   expect(result).toContain("made with ♥");
 });

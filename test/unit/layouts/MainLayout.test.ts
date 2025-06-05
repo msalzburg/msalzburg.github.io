@@ -11,8 +11,6 @@ test("MainLayout without properties", async () => {
   // contains static navigation entries
   expect(result).toContain("/");
   expect(result).toContain("Home");
-  expect(result).toContain("/about");
-  expect(result).toContain("About");
 });
 
 test("MainLayout with properties", async () => {

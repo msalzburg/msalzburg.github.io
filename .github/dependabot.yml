@@ -13,3 +13,20 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    groups:
+      astro: # Group Astro dependencies together
+        patterns:
+          - "astro"
+          - "@astrojs/*"
+      tailwind: # Group Tailwind CSS dependencies together
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+      prettier: # Group Prettier dependencies together
+        patterns:
+          - "prettier"
+          - "prettier-*"
+      vitest: # Group Vite dependencies together
+        patterns:
+          - "vitest"
+          - "@vitest/*"
